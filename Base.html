@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function mostrarMensaje(mensaje, callback)
+        {
+            console.log("El mensaje es:"+mensaje);
+            callback();
+        }
+        const respuesta = mostrarMensaje("Hola",function()
+        {
+                console.log("Ahora callback");
+        })
+        function esperarSegundos(segundos, funcion)
+        {
+            setTimeout(function()
+            { funcion(segundos)
+                {
+                    console.log(`Tarde ${segundos} segundos`);
+                }
+            },segundos)
+           
+        }
+        esperarSegundos(3000,function(){
+            console.log("Esto ahora");
+        });
+
+    </script>
+</body>
+</html>
